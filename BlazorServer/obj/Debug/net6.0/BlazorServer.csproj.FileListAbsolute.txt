@@ -1,0 +1,271 @@
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.staticwebassets.runtime.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.exe
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.deps.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.runtimeconfig.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.dll
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.pdb
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfoInputs.cache
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfo.cs
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.CoreCompileInputs.cache
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cache
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cs
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.BlazorServer.props
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorServer.props
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorServer.props
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\bundle\BlazorServer.styles.css
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\BlazorServer.bundle.scp.css
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.dll
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\refint\BlazorServer.dll
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.pdb
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.genruntimeconfig.cache
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\ref\BlazorServer.dll
+D:\Semestr 4\Programowanie4\KalkulatorKaloriiBlazor\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.staticwebassets.runtime.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.exe
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.deps.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.runtimeconfig.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfoInputs.cache
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfo.cs
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.CoreCompileInputs.cache
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cache
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cs
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.BlazorServer.props
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorServer.props
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorServer.props
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\bundle\BlazorServer.styles.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\BlazorServer.bundle.scp.css
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\refint\BlazorServer.dll
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.genruntimeconfig.cache
+C:\Users\myszo\Desktop\BlazorServer\BlazorServer\obj\Debug\net6.0\ref\BlazorServer.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\appsettings.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.staticwebassets.runtime.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.exe
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.deps.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.runtimeconfig.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfoInputs.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfo.cs
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.CoreCompileInputs.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cs
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.BlazorServer.props
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorServer.props
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorServer.props
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\bundle\BlazorServer.styles.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\BlazorServer.bundle.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\refint\BlazorServer.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.genruntimeconfig.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\ref\BlazorServer.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.AssemblyReference.cache
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\BlazorSe.19EF1096.Up2Date
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\Dapper.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\bin\Debug\net6.0\libman.json
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\FoodSite.razor.rz.scp.css
+C:\Users\myszo\Desktop\ostatnie\BlazorServer\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\MyAccount.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\appsettings.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\libman.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.staticwebassets.runtime.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.exe
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.deps.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.runtimeconfig.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\Dapper.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.AssemblyReference.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfoInputs.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfo.cs
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.CoreCompileInputs.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cs
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.BlazorServer.props
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorServer.props
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorServer.props
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\FoodSite.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\MyAccount.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\bundle\BlazorServer.styles.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\BlazorServer.bundle.scp.css
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorSe.19EF1096.Up2Date
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\refint\BlazorServer.dll
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.genruntimeconfig.cache
+C:\Users\myszo\Desktop\Programowanie studia projekty\Projekt blazor\BlazorServer\obj\Debug\net6.0\ref\BlazorServer.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\appsettings.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\libman.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.staticwebassets.runtime.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.exe
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.deps.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.runtimeconfig.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\Dapper.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.AssemblyReference.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfoInputs.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.AssemblyInfo.cs
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.csproj.CoreCompileInputs.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.RazorAssemblyInfo.cs
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.build.BlazorServer.props
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BlazorServer.props
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.BlazorServer.props
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\FoodSite.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Pages\MyAccount.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\bundle\BlazorServer.styles.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\scopedcss\projectbundle\BlazorServer.bundle.scp.css
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorSe.19EF1096.Up2Date
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\refint\BlazorServer.dll
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.pdb
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\BlazorServer.genruntimeconfig.cache
+C:\Users\myszo\Desktop\Projekt blazor\BlazorServer\obj\Debug\net6.0\ref\BlazorServer.dll

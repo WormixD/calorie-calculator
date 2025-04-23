@@ -1,0 +1,583 @@
+﻿@page "/FoodSite"
+@using Dapper
+@using MySqlConnector
+@inject IConfiguration Configuration
+
+@code {
+    //baza
+    private List<DailyFood> dailyFoods;
+    private List<Drink> drinks;
+    private List<Maindish> maindishes;
+    private List<Snack> snacks;
+
+    private bool isLoading = true;
+    private bool isError = false;
+    private int selectedProductId;
+
+    private int selectedTable = 1; // Domyślnie ustawiamy na wartość 1
+
+    private string selectedProductName;
+    private int selectedProductCalories;
+    private int selectedProductProteins;
+    private int selectedProductCarbohydrates;
+    private int selectedProductFats;
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+    }
+
+    private void LoadData()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            dailyFoods = connection.Query<DailyFood>("SELECT id_jedzenia, name, calories, proteins, carbohydrates, fats FROM dailyfood_tb").ToList();
+            drinks = connection.Query<Drink>("SELECT drink_id, name, calories , proteins, carbohydrates, fats FROM drinks_tb").ToList();
+            maindishes = connection.Query<Maindish>("SELECT dish_id, name, calories , proteins, carbohydrates, fats FROM maindishes_tb").ToList();
+            snacks = connection.Query<Snack>("SELECT snack_id, name, calories , proteins, carbohydrates, fats FROM snacks_tb").ToList();
+
+            isLoading = false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+            isLoading = false;
+        }
+    }
+
+    private void AddProductToDailyFood()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            FoodBase selectedFood = null;
+
+            switch (selectedTable)
+            {
+                case 1:
+                    selectedFood = drinks.FirstOrDefault(d => d.Drink_id == selectedProductId);
+                    break;
+                case 2:
+                    selectedFood = maindishes.FirstOrDefault(m => m.Dish_id == selectedProductId);
+                    break;
+                case 3:
+                    selectedFood = snacks.FirstOrDefault(s => s.Snack_id == selectedProductId);
+                    break;
+            }
+
+            if (selectedFood != null)
+            {
+                // Zmodyfikuj zapytanie INSERT, aby nie uwzględniało kolumny id_jedzenia
+                var query = "INSERT INTO dailyfood_tb (name, calories, proteins, carbohydrates, fats) VALUES (@Name, @Calories, @Proteins, @Carbohydrates, @Fats)";
+                connection.Execute(query, new { selectedFood.Name, selectedFood.Calories, selectedFood.Proteins, selectedFood.Carbohydrates, selectedFood.Fats });
+
+                // Pobierz nowo przydzielone ID
+                selectedProductId = connection.ExecuteScalar<int>("SELECT LAST_INSERT_ID()");
+                LoadData();
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+        }
+    }
+
+
+    private void RemoveProductFromDailyFood()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            var query = "DELETE FROM dailyfood_tb WHERE id_jedzenia = @Id";
+            connection.Execute(query, new { Id = selectedProductId });
+            LoadData();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+        }
+    }
+
+    private void AddProductToCatalog()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            // Ustaw właściwą tabelę na podstawie wybranego radio buttona
+            string tableName = selectedTable switch
+            {
+                1 => "drinks_tb",
+                2 => "maindishes_tb",
+                3 => "snacks_tb",
+                _ => throw new InvalidOperationException("Invalid selectedTable value"),
+            };
+
+            // Wstaw nowy produkt do odpowiedniej tabeli
+            var query = $@"INSERT INTO {tableName} (name, calories, proteins, carbohydrates, fats)
+                       VALUES (@Name, @Calories, @Proteins, @Carbohydrates, @Fats)";
+            connection.Execute(query, new
+            {
+                Name = selectedProductName,
+                Calories = selectedProductCalories,
+                Proteins = selectedProductProteins,
+                Carbohydrates = selectedProductCarbohydrates,
+                Fats = selectedProductFats
+            });
+
+            LoadData();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+        }
+    }
+
+    private void RemoveProductFromCatalog()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            // Ustaw właściwą tabelę na podstawie wybranego radio buttona
+            string tableName = selectedTable switch
+            {
+                1 => "drinks_tb",
+                2 => "maindishes_tb",
+                3 => "snacks_tb",
+                _ => throw new InvalidOperationException("Invalid selectedTable value"),
+            };
+
+            // Usuń produkt z odpowiedniej tabeli na podstawie jego nazwy
+            var query = $"DELETE FROM {tableName} WHERE name = @Name";
+            connection.Execute(query, new { Name = selectedProductName });
+
+            LoadData();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+        }
+    }
+
+    public class DailyFood
+    {
+        public int Id_Jedzenia { get; set; }
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public int Proteins { get; set; }
+        public int Carbohydrates { get; set; }
+        public int Fats { get; set; }
+    }
+
+    public class Drink : FoodBase
+    {
+        public int Drink_id { get; set; }
+    }
+
+    public class Maindish : FoodBase
+    {
+        public int Dish_id { get; set; }
+    }
+
+    public class Snack : FoodBase
+    {
+        public int Snack_id { get; set; }
+    }
+
+    public abstract class FoodBase
+    {
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public int Proteins { get; set; }
+        public int Carbohydrates { get; set; }
+        public int Fats { get; set; }
+    }
+
+    //użytkownik
+
+    private UserModel user = new UserModel();
+    private double bmi;
+    private double zapotrzebowanieKaloryczne;
+    private double zapotrzebowanieKaloryczneCel;
+
+    private double weglowodanyGramy;
+    private double tluszczeGramy;
+    private double bialkoGramy;
+    private double weglowodanyKalorie;
+    private double tluszczeKalorie;
+    private double bialkoKalorie;
+
+    public class UserModel
+    {
+        public int Plec { get; set; }
+        public int Wiek { get; set; }
+        public int Waga { get; set; }
+        public int Wzrost { get; set; }
+        public int Aktywnosc { get; set; }
+        public int Praca { get; set; }
+        public int Cel { get; set; }
+    }
+
+    private void HandleTableChange(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int selected))
+        {
+            selectedTable = selected;
+            LoadData(); // Odśwież dane po zmianie tabeli
+        }
+    }
+
+}
+
+<body>
+    <div class="discount">
+        <p>🔥 ZNIŻKA na plan dietetyczny</p>
+        <a class="anchor-links" href="#">&nbsp Więcej tutaj</a>
+        <p id="countdown"></p>
+    </div>
+    <div class="container">
+        <header class="main-header">
+            <div class="shop-name">
+                <h1 class="second-name">Kalkulator</h1>
+                <h2 class="second-name">
+                    Osiągnij swój <em><strong>cel</strong></em>
+                </h2>
+            </div>
+            <nav class="services">
+                <ul>
+                    <li>
+                        <a class="anchors">
+                            <NavLink href="FoodSite" class="header-anchor" style="color:blue;text-decoration: none;">
+                                🧾Dodaj posiłek
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="anchors" href="akwaporadnik.php">📗Katalog Produktów</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sign-in">
+
+                <NavLink href="Login" class="header-anchor">🔒Moje konto</NavLink>
+                <input class="basket-items" type="text" value="Wylogowany" />
+            </div>
+            <div class="message-button2">
+                <input type="radio" class="radio-buttons" id="drinks" name="table" value="1" @onchange="HandleTableChange" checked />
+                <label for="drinks">Napoje</label>
+                <br />
+                <input type="radio" class="radio-buttons" id="maindishes" name="table" value="2" @onchange="HandleTableChange" />
+                <label for="maindishes">Główne dania</label>
+                <br />
+                <input type="radio" class="radio-buttons" id="snacks" name="table" value="3" @onchange="HandleTableChange" />
+                <label for="snacks">Przekąski</label>
+            </div>
+            <button id="message-form" type="button" class="message-button">
+                Napisz<br />do<br />nas<br />❤
+            </button>
+        </header>
+        <article>
+            <header class="accesories">
+                <a id="brand" href="#">Producenci</a>
+                <a id="aquariums" href="#">Kategorie</a>
+                <a id="co2" href="#">Zastosowania</a>
+                <a id="fertilizers" href="#">Wyprzedaże</a>
+                <a id="subsoil" href="#">Strefa wiedzy</a>
+                <a id="food" href="#">Nasze sklepy</a>
+                <a id="appendages" href="#">Prezenty</a>
+            </header>
+            <div class="register-form">
+                
+                <div class="tabelki-dziennych">
+                    <div>
+                        <h3>Lista Wszystkich produktów</h3>
+                        @if (isLoading)
+                        {
+                            <p><em>Loading...</em></p>
+                        }
+                        else if (isError)
+                        {
+                            <p>An error occurred while loading data. Please try again later.</p>
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Jedzenia</th>
+                                        <th>Nazwa</th>
+                                        <th>Kalorie</th>
+                                        <th>Białko</th>
+                                        <th>Węglowodany</th>
+                                        <th>Tłuszcze</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (selectedTable == 1)
+                                    {
+                                        @foreach (var food in drinks)
+                                        {
+                                            <tr>
+                                                <td>@food.Drink_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else if (selectedTable == 2)
+                                    {
+                                        @foreach (var food in maindishes)
+                                        {
+                                            <tr>
+                                                <td>@food.Dish_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else if (selectedTable == 3)
+                                    {
+                                        @foreach (var food in snacks)
+                                        {
+                                            <tr>
+                                                <td>@food.Snack_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                    <div>
+                        <h3>Lista Produktów Dziennych</h3>
+                        @if (isLoading)
+                        {
+                            <p><em>Loading...</em></p>
+                        }
+                        else if (isError)
+                        {
+                            <p>An error occurred while loading data. Please try again later.</p>
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Jedzenia</th>
+                                        <th>Nazwa</th>
+                                        <th>Kalorie</th>
+                                        <th>Białko</th>
+                                        <th>Węglowodany</th>
+                                        <th>Tłuszcze</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var food in dailyFoods)
+                                    {
+                                        <tr>
+                                            <td>@food.Id_Jedzenia</td>
+                                            <td>@food.Name</td>
+                                            <td>@food.Calories</td>
+                                            <td>@food.Proteins</td>
+                                            <td>@food.Carbohydrates</td>
+                                            <td>@food.Fats</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                </div>
+                <div class="dodawawnie-dziennych">
+                    <form @onsubmit="HandleSubmit">
+                        <img class="login-picture" src="Images/kalkulator.png" alt="sylwetka użytkownika" />
+                        <h1>Jaki posiłek chcesz dodać? Podaj numer:</h1>
+                        <label for="productId"></label>
+                        <input class="header-input"
+                               type="number"
+                               min="1"
+                               id="productId"
+                               @bind="selectedProductId"
+                               oncanplaythrough=""
+                               placeholder="ID posiłku"
+                               required />
+                        <label for="action"></label>
+                        <button type="button" class="anchors" @onclick="AddProductToDailyFood">Dodaj</button>
+                        <button type="button" class="anchors" @onclick="RemoveProductFromDailyFood">Usuń</button>
+                        <button type="button" class="anchors" @onclick="ClearDailyFoods">Wyczyść dzienne posiłki</button>
+                    </form>
+                </div>
+            </div>
+            <div class="register-form2">
+                @* <div>
+                    <input type="radio" class="radio-buttons" id="drinks" name="table" value="1" @onchange="HandleTableChange" checked />
+                    <label for="drinks">Napoje</label>
+
+                    <input type="radio" class="radio-buttons" id="maindishes" name="table" value="2" @onchange="HandleTableChange" />
+                    <label for="maindishes">Główne dania</label>
+
+                    <input type="radio" class="radio-buttons" id="snacks" name="table" value="3" @onchange="HandleTableChange" />
+                    <label for="snacks">Przekąski</label>
+                </div> *@
+                <div class="tabelki-dziennych">
+                    <div>
+                        <form @onsubmit="HandleSubmit">
+
+                            <h1>Podaj nazwę produktu do dodania</h1>
+
+                            <label for="nazwa">Nazwa:</label>
+                            <input class="form-input" type="text" id="nazwa" @bind="selectedProductName" placeholder="Nazwa posiłku" required />
+
+                            <label for="kalorie">Kalorie:</label>
+                            <input class="form-input" type="number" min="1" id="kalorie" @bind="selectedProductCalories" placeholder="Kalorie posiłku" required />
+
+                            <label for="bialko">Białko:</label>
+                            <input class="form-input" type="number" min="1" id="bialko" @bind="selectedProductProteins" placeholder="Białko posiłku" required />
+
+                            <label for="weglowodany">Węglowodany:</label>
+                            <input class="form-input" type="number" min="1" id="weglowodany" @bind="selectedProductCarbohydrates" placeholder="Węglowodany posiłku" required />
+
+                            <label for="tluszcze">Tłuszcze:</label>
+                            <input class="form-input" type="number" min="1" id="tluszcze" @bind="selectedProductFats" placeholder="Tłuszcze posiłku" required />
+
+
+
+                            <label for="action"></label>
+                            <button type="button" class="anchors" @onclick="AddProductToCatalog">Dodaj</button>
+                            <button type="button" class="anchors" @onclick="RemoveProductFromCatalog">Usuń</button>
+                            <input type="reset" class="anchors" value="Wyczyść" />
+                        </form>
+                    </div>
+                    <div>
+                        <h3>Lista Wszystkich produktów</h3>
+                        @if (isLoading)
+                        {
+                            <p><em>Loading...</em></p>
+                        }
+                        else if (isError)
+                        {
+                            <p>An error occurred while loading data. Please try again later.</p>
+                        }
+                        else
+                        {
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID Jedzenia</th>
+                                        <th>Nazwa</th>
+                                        <th>Kalorie</th>
+                                        <th>Białko</th>
+                                        <th>Węglowodany</th>
+                                        <th>Tłuszcze</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (selectedTable == 1)
+                                    {
+                                        @foreach (var food in drinks)
+                                        {
+                                            <tr>
+                                                <td>@food.Drink_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else if (selectedTable == 2)
+                                    {
+                                        @foreach (var food in maindishes)
+                                        {
+                                            <tr>
+                                                <td>@food.Dish_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                    else if (selectedTable == 3)
+                                    {
+                                        @foreach (var food in snacks)
+                                        {
+                                            <tr>
+                                                <td>@food.Snack_id</td>
+                                                <td>@food.Name</td>
+                                                <td>@food.Calories</td>
+                                                <td>@food.Proteins</td>
+                                                <td>@food.Carbohydrates</td>
+                                                <td>@food.Fats</td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</body>
+
+@code {
+    private void HandleSubmit()
+    {
+        // Optional: Handle form submission if needed
+    }
+
+    private void ClearDailyFoods()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            var query = "DELETE FROM dailyfood_tb";
+            connection.Execute(query);
+            LoadData();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+        }
+    }
+}

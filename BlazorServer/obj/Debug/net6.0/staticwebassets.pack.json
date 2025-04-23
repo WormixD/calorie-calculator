@@ -1,0 +1,137 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BlazorServer.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BlazorServer.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\BMI.png",
+      "PackagePath": "staticwebassets\\Images\\BMI.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\abonament.png",
+      "PackagePath": "staticwebassets\\Images\\abonament.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\aktywnosc.png",
+      "PackagePath": "staticwebassets\\Images\\aktywnosc.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\bialko.png",
+      "PackagePath": "staticwebassets\\Images\\bialko.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\dostawa.png",
+      "PackagePath": "staticwebassets\\Images\\dostawa.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\kalkulator.png",
+      "PackagePath": "staticwebassets\\Images\\kalkulator.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\klient.png",
+      "PackagePath": "staticwebassets\\Images\\klient.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\login.png",
+      "PackagePath": "staticwebassets\\Images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\produkty.png",
+      "PackagePath": "staticwebassets\\Images\\produkty.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\tluszcze.png",
+      "PackagePath": "staticwebassets\\Images\\tluszcze.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\waga.png",
+      "PackagePath": "staticwebassets\\Images\\waga.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\weglowodany.png",
+      "PackagePath": "staticwebassets\\Images\\weglowodany.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\wiek.png",
+      "PackagePath": "staticwebassets\\Images\\wiek.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\wzrost.png",
+      "PackagePath": "staticwebassets\\Images\\wzrost.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\Images\\zapotrzebowanie.png",
+      "PackagePath": "staticwebassets\\Images\\zapotrzebowanie.png"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\myszo\\Desktop\\Projekt blazor\\BlazorServer\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.BlazorServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.BlazorServer.props",
+      "PackagePath": "build\\BlazorServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.BlazorServer.props",
+      "PackagePath": "buildMultiTargeting\\BlazorServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.BlazorServer.props",
+      "PackagePath": "buildTransitive\\BlazorServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,659 @@
+﻿@page "/MyAccount"
+@using Dapper
+@using MySqlConnector
+@inject IConfiguration Configuration
+
+@code {
+    //baza
+    private List<DailyFood> dailyFoods;
+    //private List<Drink> drinks;
+    //private List<Maindish> maindishes;
+    //private List<Snack> snacks;
+
+    private bool isLoading = true;
+    private bool isError = false;
+
+    private int kalorie_zjedzone;
+    private int weglowodany_zjedzone;
+    private int bialko_zjedzone;
+    private int tluszcze_zjedzone;
+    public class DailyFood
+    {
+        public int Id_Jedzenia { get; set; }
+        public string Name { get; set; }
+        public int Calories { get; set; }
+        public int Carbohydrates { get; set; }
+        public int Proteins { get; set; }
+        public int Fats { get; set; }
+    }
+
+    //użytkownik
+
+    private UserModel user = new UserModel();
+    private double bmi;
+    private double zapotrzebowanieKaloryczne;
+    private double zapotrzebowanieKaloryczneCel;
+
+    private double weglowodanyGramy;
+    private double tluszczeGramy;
+    private double bialkoGramy;
+    private double weglowodanyKalorie;
+    private double tluszczeKalorie;
+    private double bialkoKalorie;
+
+    public class UserModel
+    {
+        public int Plec { get; set; }
+        public int Wiek { get; set; }
+        public int Waga { get; set; }
+        public int Wzrost { get; set; }
+        public int Aktywnosc { get; set; }
+        public int Praca { get; set; }
+        public int Cel { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+            dailyFoods = connection.Query<DailyFood>("SELECT id_jedzenia, name, calories, carbohydrates, proteins, fats FROM dailyfood_tb").ToList();
+            user = connection.QueryFirstOrDefault<UserModel>("SELECT wiek, waga, wzrost, plec, aktywnosc, praca, cel FROM users_tb WHERE id_uzytkownika = 13");
+
+            kalorie_zjedzone = dailyFoods.Sum(food => food.Calories);
+            weglowodany_zjedzone = dailyFoods.Sum(food => food.Carbohydrates);
+            bialko_zjedzone = dailyFoods.Sum(food => food.Proteins);
+            tluszcze_zjedzone = dailyFoods.Sum(food => food.Fats);
+
+            isLoading = false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+            isError = true;
+            isLoading = false;
+        }
+    }
+    
+
+    //płeć
+
+    private void OnGenderChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int plec))
+        {
+            user.Plec = plec;
+        }
+    }
+
+
+    //Cel kaloryczny
+
+    private void OnTargetChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value.ToString(), out int cel))
+        {
+            user.Cel = cel;
+        }
+    }
+
+    //oblicz
+
+    private void Oblicz()
+    {
+        if (user.Waga > 0 && user.Wzrost > 0 && user.Plec != 0)
+        {
+            bmi = user.Waga / Math.Pow(user.Wzrost / 100.0, 2);
+            int wynik = 0;
+            do
+            {
+                if (user.Plec == 1)
+                {
+                    wynik += 150;
+                }
+                else if (user.Plec == 2)
+                {
+                    wynik -= 150;
+                }
+                else
+                {
+                    //JS.InvokeVoidAsync("alert", "Zaznacz płeć.");
+                }
+            } while (user.Plec != 1 && user.Plec != 2);
+
+            double baseCalorie = 10 * user.Waga + 6.25 * user.Wzrost + 5 * user.Wiek + wynik;
+            switch (user.Aktywnosc)
+            {
+                case 1:
+                    baseCalorie *= 1.02;
+                    break;
+                case 2:
+                    baseCalorie *= 1.175;
+                    break;
+                case 3:
+                    baseCalorie *= 1.25;
+                    break;
+                case 4:
+                    baseCalorie *= 1.525;
+                    break;
+                case 5:
+                    baseCalorie *= 1.7;
+                    break;
+            }
+
+            switch (user.Praca)
+            {
+                case 1:
+                    baseCalorie += 100;
+                    break;
+
+                case 2:
+                    baseCalorie += 300;
+                    break;
+
+                case 3:
+                    baseCalorie += 700;
+                    break;
+
+            }
+            zapotrzebowanieKaloryczne = baseCalorie;
+            if (user.Cel == 1 || user.Cel == 2 || user.Cel == 3 || user.Cel == 4)
+            {
+                switch (user.Cel)
+                {
+                    case 1: // Utrzymać wagę
+                        zapotrzebowanieKaloryczneCel = baseCalorie;
+                        break;
+                    case 2: // Przytyć
+                        zapotrzebowanieKaloryczneCel = baseCalorie + 500;
+                        break;
+                    case 3: // Schudnąć
+                        zapotrzebowanieKaloryczneCel = baseCalorie - 500;
+                        break;
+                }
+            }
+            else
+            {
+
+            }
+
+            weglowodanyKalorie = zapotrzebowanieKaloryczneCel / 2;
+            tluszczeKalorie = zapotrzebowanieKaloryczneCel / 4;
+            bialkoKalorie = zapotrzebowanieKaloryczneCel / 4;
+
+            weglowodanyGramy = weglowodanyKalorie / 4;
+            tluszczeGramy = tluszczeKalorie / 9;
+            bialkoGramy = bialkoKalorie / 4;
+
+            //user.Cel = 0;
+            //user.Plec = 0;
+        }
+
+    }
+
+    //zapisz
+
+    private async Task Zapisz()
+    {
+        try
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            using var connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            var query = "UPDATE users_tb SET wiek = @Wiek, waga = @Waga, plec=@Plec, wzrost = @Wzrost, aktywnosc = @Aktywnosc, praca = @Praca, cel = @Cel WHERE id_uzytkownika = @UserId";
+            var parameters = new { user.Wiek, user.Waga, user.Wzrost, user.Aktywnosc, user.Praca, user.Cel, UserId = 1 };
+
+            await connection.ExecuteAsync(query, parameters);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+    }
+
+
+    //kalendarz
+    private DateTime CurrentDate = DateTime.Now;
+    private int Year => CurrentDate.Year;
+    private int Month => CurrentDate.Month;
+    private int DaysInMonth => DateTime.DaysInMonth(Year, Month);
+    private int FirstDayOfWeek => ((int)new DateTime(Year, Month, 1).DayOfWeek + 6) % 7; // Poniedziałek jako pierwszy dzień tygodnia
+    private bool IsToday(int day) => day == CurrentDate.Day && Month == CurrentDate.Month && Year == CurrentDate.Year;
+
+
+}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Kalorie', 'Węglowodany', 'Białko', 'Tłuszcze'],
+                datasets: [{
+                    label: 'Spożyte wartości',
+                    data: [@kalorie_zjedzone, @weglowodany_zjedzone, @bialko_zjedzone, @tluszcze_zjedzone],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+<body>
+    <div class="discount">
+        <p>🔥 ZNIŻKA na plan dietetyczny</p>
+        <a class="anchor-links" href="#">&nbsp Więcej tutaj</a>
+        <p id="countdown"></p>
+    </div>
+    <div class="container">
+        <header class="main-header">
+            <div class="shop-name">
+                <h1 class="second-name">Kalkulator</h1>
+                <h2 class="second-name">
+                    Osiągnij swój <em><strong>cel</strong></em>
+                </h2>
+            </div>
+            <nav class="services">
+                <ul>
+                    <li>
+                        <a class="anchors">
+                            <NavLink href="FoodSite" class="header-anchor" style="color:blue;text-decoration: none;">
+                                🧾Dodaj posiłek
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="anchors" href="akwaporadnik.php">📗Katalog Produktów</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sign-in">
+
+                <NavLink href="Login" class="header-anchor">🔒Moje konto</NavLink>
+                <input class="basket-items" type="text" value="Wylogowany" />
+            </div>
+            <div class="basket">
+                <h2>Kalendarz - @CurrentDate.ToString("MMMM yyyy")</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pon</th>
+                            <th>Wto</th>
+                            <th>Śro</th>
+                            <th>Czw</th>
+                            <th>Pią</th>
+                            <th>Sob</th>
+                            <th>Nie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int day = 1;
+                            for (int i = 0; i < 5; i++)
+                            {
+                                <tr>
+                                    @for (int j = 0; j < 7; j++)
+                                    {
+                                        if (i == 0 && j < FirstDayOfWeek || day > DaysInMonth)
+                                        {
+                                            <td></td>
+                                        }
+                                        else
+                                        {
+                                            <td class="@(IsToday(day) ? "today" : "")">@day</td>
+                                            day++;
+                                        }
+                                    }
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <button id="message-form" type="button" class="message-button">
+                Napisz<br />do<br />nas<br />❤
+            </button>
+        </header>
+        <article>
+            <header class="accesories">
+                <a id="brand" href="#">Producenci</a>
+                <a id="aquariums" href="#">Kategorie</a>
+                <a id="co2" href="#">Zastosowania</a>
+                <a id="fertilizers" href="#">Wyprzedaże</a>
+                <a id="subsoil" href="#">Strefa wiedzy</a>
+                <a id="food" href="#">Nasze sklepy</a>
+                <a id="appendages" href="#">Prezenty</a>
+            </header>
+            <form>
+                <div class=article-form>
+                    <div class="radio-group">
+                        <input class="radio-buttons"
+                               type="radio"
+                               id="mezczyzna"
+                               name="plec"
+                               value="1"
+                               @onchange="OnGenderChanged" />
+                        <label for="mezczyzna">Mężczyzna</label>
+
+                        <input class="radio-buttons"
+                               type="radio"
+                               id="kobieta"
+                               name="plec"
+                               value="2"
+                               @onchange="OnGenderChanged" />
+                        <label for="kobieta">Kobieta</label>
+                    </div>
+
+                    <div class="bestseller">
+                        <div class="first-best">
+                            <p class="bestseller-name">Wiek</p>
+                            <input class="form-input"
+                                   type="number"
+                                   id="wiek"
+                                   name="wiek"
+                                   min="1"
+                                   required
+                                   @bind="user.Wiek" />
+                        </div>
+                        <div class="second-best">
+                            <p class="bestseller-name">Waga</p>
+                            <input class="form-input"
+                                   type="number"
+                                   id="waga"
+                                   name="waga"
+                                   min="1"
+                                   required
+                                   @bind="user.Waga" />
+                        </div>
+                        <div class="third-best">
+                            <p class="bestseller-name">Wzrost</p>
+                            <input class="form-input"
+                                   type="number"
+                                   id="wzrost"
+                                   name="wzrost"
+                                   min="1"
+                                   required
+                                   @bind="user.Wzrost" />
+                        </div>
+
+                        <div class="first-best">
+                            <p class="bestseller-name">Poziom aktywności fizycznej</p>
+                            <img class="product-picture"
+                                 src="pictures/wężyk.png"
+                                 alt="aktywność" />
+                            <div class="select-activity">
+                                <select class="select-activity" id="aktywnosc" name="aktywnosc" @bind="user.Aktywnosc">
+                                    <option value="1">1. Niewielka/Brak treningów</option>
+                                    <option value="2">2. Niska aktywność (treningi 1-3 razy/tydzień)</option>
+                                    <option value="3">3. Średnia aktywność (codzienna aktywność lub intensywne treningi 3-4 razy/tydzień)</option>
+                                    <option value="4">4. Wysoka aktywność (intensywne treningi 6-7 razy/tydzień)</option>
+                                    <option value="5">5. Bardzo wysoka aktywność (codzienne bardzo intensywne treningi lub praca fizyczna)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="second-best">
+                            <p class="bestseller-name">Rodzaj wykonywanej pracy</p>
+                            <img class="product-picture"
+                                 src="pictures/zaworek.jpg"
+                                 alt="rodzaj pracy" />
+                            <div class="select-activity">
+                                <select id="praca" name="praca" @bind="user.Praca">
+                                    <option value="1" id="1">1. Siedząca</option>
+                                    <option value="2" id="2">2. O umiarkowanej aktywności</option>
+                                    <option value="3" id="3">3. Ciężka fizyczna</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="third-best">
+                            <p class="bestseller-name">Cel kaloryczny</p>
+                            <img class="product-picture"
+                                 src="pictures/substrat.png"
+                                 alt="cel kaloryczny" />
+
+                            <div class="radio-group2">
+                                <input class="radio-buttons2"
+                                       type="radio"
+                                       name="cel"
+                                       id="utrzymanie"
+                                       value="1"
+                                       @onchange="OnTargetChanged" />
+
+                                <label for="utrzymanie">Chcę utrzymać wagę</label><br />
+
+                                <input class="radio-buttons2"
+                                       type="radio"
+                                       name="cel"
+                                       id="przytyc"
+                                       value="2"
+                                       @onchange="OnTargetChanged" />
+                                <label for="przytyc">Chcę przytyć</label><br />
+
+                                <input class="radio-buttons2"
+                                       type="radio"
+                                       name="cel"
+                                       id="schudnac"
+                                       value="3"
+                                       @onchange="OnTargetChanged" />
+                                <label for="schudnac">Chcę schudnąć</label><br />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="radio-group">
+                        <button class="form-button" type="button" @onclick="Oblicz">Oblicz</button>
+                        <input class="form-button" type="submit" value="Zapisz" />
+                        <input class="form-button" type="reset" value="Wyczyść" />
+
+                    </div>
+                </div>
+            </form>
+            <div class="calculate">
+                <div class="products">
+                    <a class="calculate-anchor-picture" href="#">
+                        <img class="pulse-picture"
+                             src="Images/BMI.png"
+                             alt="voucher rabatowy" />
+                    </a>
+                    <p class="calculate-desc">Twój wskaźnik BMI wynosi:</p>
+                    <span id="bmr" class="calc-result">@String.Format("{0:F2}", bmi)</span>
+                </div>
+                <div class="delivery">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture delivery-picture"
+                             src="Images/weglowodany.png"
+                             alt="furgonetka z paczkami" />
+                    </a>
+                    <p class="calculate-desc">Węglowodany</p>
+                    <span id="carbon" class="calc-result">@String.Format("{0:F2}", @weglowodanyKalorie) = @String.Format("{0:F2}", weglowodanyGramy) g</span>
+                </div>
+                <div class="loyalty-program">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/aktywnosc.png"
+                             alt="obrazek z paczkami" />
+                    </a>
+                    <p class="calculate-desc">
+                        Twoje zapotrzebowanie kaloryczne po uwzględnieniu aktywności to:
+                    </p>
+                    <span id="calories" class="calc-result">@String.Format("{0:F2}", @zapotrzebowanieKaloryczne) Kcal</span>
+                </div>
+                <div class="client">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/tluszcze.png"
+                             alt="zadowolony klient emotikona" />
+                    </a>
+                    <p class="calculate-desc">Tłuszcze</p>
+                    <span id="fat" class="calc-result">@String.Format("{0:F2}", tluszczeKalorie) = @String.Format("{0:F2}", tluszczeGramy) g</span>
+                </div>
+                <div class="client">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/zapotrzebowanie.png"
+                             alt="zadowolony klient emotikona" />
+                    </a>
+                    <p class="calculate-desc">
+                        Jeśli chcesz utrzymać wagę powinieneś spożywać około:
+                    </p>
+                    <span id="weight" class="calc-result">@String.Format("{0:F2}", zapotrzebowanieKaloryczneCel) Kcal</span>
+                </div>
+                <div class="client">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/bialko.png"
+                             alt="zadowolony klient emotikona" />
+                    </a>
+                    <p class="calculate-desc">Białko</p>
+                    <span id="protein" class="calc-result">@String.Format("{0:F2}", bialkoKalorie) = @String.Format("{0:F2}", bialkoGramy) g</span>
+                </div>
+            </div>
+            <div class="parallax-content"><h1>Spożyte Kalorie</h1></div>
+            <div class="calculate2">
+                <div class="products">
+                    <a class="calculate-anchor-picture" href="#">
+                        <img class="pulse-picture"
+                             src="Images/BMI.png"
+                             alt="voucher rabatowy" />
+                    </a>
+                    <p class="calculate-desc">Kalorie zjedzone</p>
+                    <span id="bmr" class="calc-result">@String.Format("{0:F2}", kalorie_zjedzone)</span>
+                </div>
+                <div class="delivery">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture delivery-picture"
+                             src="Images/weglowodany.png"
+                             alt="furgonetka z paczkami" />
+                    </a>
+                    <p class="calculate-desc">Węglowodany</p>
+                    <span id="carbon" class="calc-result">@String.Format("{0:F2}", weglowodany_zjedzone)</span>
+                </div>
+                <div class="loyalty-program">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/bialko.png"
+                             alt="obrazek z paczkami" />
+                    </a>
+                    <p class="calculate-desc">
+                        Białko
+                    </p>
+                    <span id="calories" class="calc-result">@String.Format("{0:F2}", bialko_zjedzone)</span>
+                </div>
+                <div class="client">
+                    <a href="#" class="calculate-anchor-picture">
+                        <img class="pulse-picture"
+                             src="Images/tluszcze.png"
+                             alt="zadowolony klient emotikona" />
+                    </a>
+                    <p class="calculate-desc">Tłuszcze</p>
+                    <span id="fat" class="calc-result">@String.Format("{0:F2}", tluszcze_zjedzone)</span>
+                </div>
+            </div>
+            <div><canvas id="myChart" style="width:100%;max-width:700px"></canvas></div>
+        </article>
+
+        <aside>
+            <div id="slideout">
+                <div class="ramka">
+                    <form action="formularz.php"
+                          method="post"
+                          enctype="multipart/form-data">
+                        <label for="imie">Imię</label>
+                        <input class="form-input"
+                               type="text"
+                               id="imie"
+                               name="imie"
+                               required />
+
+                        <label for="nazwisko">Nazwisko</label>
+                        <input class="form-input"
+                               type="text"
+                               id="nazwisko"
+                               name="nazwisko"
+                               required />
+
+                        <label for="email">Email</label>
+                        <input class="form-input"
+                               type="email"
+                               id="email"
+                               name="email"
+                               required />
+
+                        <label for="tytul">Tytuł</label>
+                        <input class="form-input"
+                               type="text"
+                               id="tytul"
+                               name="tytul"
+                               required />
+
+                        <label for="wiadomosc">Wiadomość</label>
+                        <textarea class="form-control"
+                                  id="wiadomosc"
+                                  name="wiadomosc"
+                                  required></textarea>
+
+                        <label for="akceptacja">Akceptuję przetwarzanie danych</label>
+                        <input type="checkbox"
+                               id="akceptacja"
+                               name="akceptacja"
+                               required />
+
+                        <input type="file" name="plik" id="file" />
+                        <input class="form-button" type="submit" value="Wyślij" />
+                        <input class="form-button" type="reset" value="Wyczyść" />
+                    </form>
+                </div>
+            </div>
+            <nav class="social-media">
+                <p>Odwiedź nas na facebooku</p>
+                <a href="#" class="fa fa-facebook"></a>
+                <p>Zajrzyj na twittera</p>
+                <a href="#" class="fa fa-twitter"></a>
+                <p>Wpadaj na youtuba</p>
+                <a href="#" class="fa fa-youtube"></a>
+            </nav>
+        </aside>
+        <footer>
+            <div class="troubles-bar">
+                <p>Informacje</p>
+                <p>Plany i płatność</p>
+                <p>Gwarancja zadowolenia</p>
+            </div>
+            <div class="contact-info">
+                <ul>
+                    <li>+48 333 123 987</li>
+                    <li>Kalk@Cal.pl</li>
+                </ul>
+            </div>
+            <div class="copywrite">
+                <p>Copywrite &copy; 2023 KalkCal</p>
+                <p>KalkCal ul.Dębowa 45 lok. 86/87a, 25-463 ***</p>
+            </div>
+        </footer>
+    </div>
+
+</body>

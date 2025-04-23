@@ -1,0 +1,121 @@
+﻿@page "/Login"
+@using Dapper
+@using MySqlConnector
+@inject IConfiguration Configuration
+@inject NavigationManager NavManager
+
+@code {
+    private string email;
+    private string haslo;
+    private string message;
+    private string status = "Wylogowany";
+    private async Task HandleLogin()
+    {
+        var connectionString = Configuration.GetConnectionString("DefaultConnection");
+        using (var connection = new MySqlConnection(connectionString))
+        {
+            var user = await connection.QuerySingleOrDefaultAsync<User>(
+                "SELECT * FROM users_tb WHERE email = @Email AND Haslo = @Haslo",
+                new { Email = email, Haslo = haslo }
+            );
+
+            if (user != null)
+            {
+                message = "Zalogowano pomyślnie!";
+                status = "Zalogowany";
+                // Obsłuż pomyślne logowanie, np. przekieruj do innej strony
+                NavManager.NavigateTo("/MyAccount");
+            }
+            else
+            {
+                message = "Nieprawidłowy e-mail lub hasło.";
+            }
+        }
+    }
+
+    public class User
+    {
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+}
+
+<body>
+    <div class="discount">
+        <p>🔥 ZNIŻKA na plan dietetyczny</p>
+        <a class="anchor-links" href="#">&nbsp Więcej tutaj</a>
+        <p id="countdown"></p>
+    </div>
+    <div class="container">
+        <header class="main-header">
+            <div class="shop-name">
+                <h1 class="second-name">Kalkulator</h1>
+                <h2 class="second-name">
+                    Osiągnij swój <em><strong>cel</strong></em>
+                </h2>
+            </div>
+            <nav class="services">
+                <ul>
+                    <li>
+                        <a class="anchors">
+                            <NavLink href="FoodSite" class="header-anchor" style="color:blue;text-decoration: none;">
+                                🧾Dodaj posiłek
+                            </NavLink>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="anchors" href="akwaporadnik.php">📗Katalog Produktów</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sign-in">
+                <NavLink href="Login" class="header-anchor">🔒Moje konto</NavLink>
+                <input class="basket-items" type="text" value="@status" />
+            </div>
+            <button id="message-form" type="button" class="message-button">
+                Napisz<br />do<br />nas<br />❤
+            </button>
+        </header>
+        <article>
+            <div class="register-form">
+                <div class="ramka">
+                    <form @onsubmit="HandleLogin">
+                        <img class="login-picture" src="Images/login.png" alt="sylwetka użytkownika" />
+                        <h1>Zaloguj się do swojego konta</h1>
+                        <label for="email"></label>
+                        <input class="form-input" type="email" id="email-login" @bind="email" placeholder="E-mail" required />
+                        <label for="password"></label>
+                        <input class="form-input" type="password" id="password" @bind="haslo" placeholder="Hasło" required />
+                        <input class="form-button" type="submit" value="Zaloguj" />
+                        <div class="forgot-password">
+                            <br />
+                            <a class="anchors" href="#">Zapomniałem hasła</a>
+                        </div>
+                        <p>@message</p>
+                    </form>
+                </div>
+            </div>
+        </article>
+        <aside>
+            <div id="slideout">
+                <div class="ramka">
+                    <form>
+                        <label for="imie">Imię</label>
+                        <input class="form-input" type="text" id="imie" name="imie" required />
+                        <label for="nazwisko">Nazwisko</label>
+                        <input class="form-input" type="text" id="nazwisko" name="nazwisko" required />
+                        <label for="email">Email</label>
+                        <input class="form-input" type="email" id="email" name="email" required />
+                        <label for="tytul">Tytuł</label>
+                        <input class="form-input" type="text" id="tytul" name="tytul" required />
+                        <label for="wiadomosc">Wiadomość</label>
+                        <textarea class="form-control" id="wiadomosc" name="wiadomosc" required></textarea>
+                        <input class="form-button" type="submit" value="Wyślij" />
+                        <input class="form-button" type="reset" value="Wyczyść" />
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
