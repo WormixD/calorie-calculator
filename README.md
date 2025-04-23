@@ -1,0 +1,1 @@
+A web application developed using Blazor technology, designed to calculate the user's daily caloric needs based on basic information (age, gender, weight, height, and activity level). The project was created as a student assignment using HTML, CSS, and C#.
